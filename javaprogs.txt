@@ -1,0 +1,1109 @@
+1. Java Program to Print a Welcome Message
+java
+Copy code
+public class Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Java Programming!");
+    }
+}
+2. Java Program with Multiple Classes in a Single File
+java
+Copy code
+class FirstClass {
+    public static void main(String[] args) {
+        System.out.println("This is the first class.");
+    }
+}
+
+class SecondClass {
+    public static void main(String[] args) {
+        System.out.println("This is the second class.");
+    }
+}
+You can run each class independently by using:
+
+bash
+Copy code
+java FirstClass
+java SecondClass
+3. Adding public to Multiple Classes
+If you try to make both classes public:
+
+java
+Copy code
+public class FirstClass {
+    public static void main(String[] args) {
+        System.out.println("First class");
+    }
+}
+
+public class SecondClass {
+    public static void main(String[] args) {
+        System.out.println("Second class");
+    }
+}
+Output:
+This will result in a compile-time error, as there can only be one public class in a Java file, and its name must match the filename.
+
+4. Java Program to Overload main()
+java
+Copy code
+public class MainOverload {
+    public static void main(String[] args) {
+        System.out.println("Main method with String[] args");
+        main(10);
+    }
+
+    public static void main(int a) {
+        System.out.println("Main method with int argument: " + a);
+    }
+}
+Execution:
+The program will start from main(String[] args) as the JVM looks for this signature. Then, it calls the overloaded method.
+
+5. Invoking Overloaded main() from Main
+This is already shown in Q4, where we invoke main(int a) from the main method.
+
+6. Invoking Second Class main() from First Class
+java
+Copy code
+class FirstClass {
+    public static void main(String[] args) {
+        System.out.println("This is the first class.");
+        SecondClass.main(args);  // Invoking the main of SecondClass
+    }
+}
+
+class SecondClass {
+    public static void main(String[] args) {
+        System.out.println("This is the second class.");
+    }
+}
+7. Java Program to Pass Command-Line Arguments
+java
+Copy code
+public class CommandLineArgs {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            System.out.println("Command-line argument: " + args[0]);
+        } else {
+            System.out.println("No arguments provided.");
+        }
+    }
+}
+Execution:
+You can pass arguments like:
+
+bash
+Copy code
+java CommandLineArgs Hello
+8. Java Program with Constants
+java
+Copy code
+public class ConstantsExample {
+    public static final double PI = 3.14159;
+
+    public static void main(String[] args) {
+        System.out.println("The value of PI is: " + PI);
+    }
+}
+9. Java Program to Accept Student Details
+java
+Copy code
+import java.util.Scanner;
+
+public class StudentDetails {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter First Name: ");
+        String firstName = sc.nextLine();
+
+        System.out.print("Enter Last Name: ");
+        String lastName = sc.nextLine();
+
+        System.out.print("Enter Qualification: ");
+        String qualification = sc.nextLine();
+
+        System.out.print("Enter Percentage: ");
+        double percentage = sc.nextDouble();
+
+        System.out.print("Enter Total Marks: ");
+        int totalMarks = sc.nextInt();
+
+        System.out.println("Student Details: ");
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Qualification: " + qualification);
+        System.out.println("Percentage: " + percentage);
+        System.out.println("Total Marks: " + totalMarks);
+    }
+}
+10. Java Program to Convert Celsius to Fahrenheit
+java
+Copy code
+import java.util.Scanner;
+
+public class CelsiusToFahrenheit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = sc.nextDouble();
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        System.out.println("Temperature in Fahrenheit: " + fahrenheit);
+    }
+}
+I'll continue with the rest of the questions if you'd like!
+
+
+
+
+
+
+You said:
+yes continue
+ChatGPT said:
+ChatGPT
+Great! Let's continue with the solutions:
+
+11. Java Program to Check if a Number is Even or Odd
+java
+Copy code
+import java.util.Scanner;
+
+public class EvenOddCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if (num % 2 == 0) {
+            System.out.println(num + " is an even number.");
+        } else {
+            System.out.println(num + " is an odd number.");
+        }
+    }
+}
+12. Java Program to Check if a Number is a Palindrome
+java
+Copy code
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int originalNum = num, reversedNum = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            reversedNum = reversedNum * 10 + digit;
+            num /= 10;
+        }
+
+        if (originalNum == reversedNum) {
+            System.out.println(originalNum + " is a palindrome.");
+        } else {
+            System.out.println(originalNum + " is not a palindrome.");
+        }
+    }
+}
+13. Java Program to Print a Multiplication Table Using Loops
+java
+Copy code
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        System.out.println("Multiplication table for " + num + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+    }
+}
+14. Java Program to Print Alphabets Using For Loop
+java
+Copy code
+public class PrintAlphabets {
+    public static void main(String[] args) {
+        System.out.println("Lowercase alphabets:");
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            System.out.print(ch + " ");
+        }
+
+        System.out.println("\nUppercase alphabets:");
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            System.out.print(ch + " ");
+        }
+    }
+}
+15. Java Program to Print a Pattern
+java
+Copy code
+public class StarPattern {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 6; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+16. Java Program to Display Grades Based on Marks
+java
+Copy code
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks: ");
+        int marks = sc.nextInt();
+
+        if (marks >= 80 && marks <= 100) {
+            System.out.println("Grade: A");
+        } else if (marks >= 60 && marks < 80) {
+            System.out.println("Grade: B");
+        } else if (marks >= 40 && marks < 60) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: F");
+        }
+    }
+}
+17. Java Program to Check if a Number is in the Fibonacci Series
+java
+Copy code
+import java.util.Scanner;
+
+public class FibonacciCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int a = 0, b = 1, fib = 0;
+        boolean isFibonacci = false;
+
+        while (fib <= num) {
+            if (fib == num) {
+                isFibonacci = true;
+                break;
+            }
+            fib = a + b;
+            a = b;
+            b = fib;
+        }
+
+        if (isFibonacci) {
+            System.out.println(num + " is in the Fibonacci series.");
+        } else {
+            System.out.println(num + " is not in the Fibonacci series.");
+        }
+    }
+}
+18. Java Program to Print Fibonacci Series Up to a Certain Point
+java
+Copy code
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int a = 0, b = 1;
+        System.out.print("Fibonacci Series: " + a + " " + b);
+
+        int next;
+        for (int i = 2; i < n; i++) {
+            next = a + b;
+            System.out.print(" " + next);
+            a = b;
+            b = next;
+        }
+        System.out.println();
+    }
+}
+19. Java Program to Calculate Factorial of a Number
+java
+Copy code
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial of " + num + " is " + fact);
+    }
+}
+20. Java Program to Perform Arithmetic Operations Using Modular Methods
+java
+Copy code
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    private int a, b;
+
+    // Constructor with parameterized values
+    public ArithmeticOperations(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    // Methods for arithmetic operations
+    public int add() {
+        return a + b;
+    }
+
+    public int subtract() {
+        return a - b;
+    }
+
+    public int multiply() {
+        return a * b;
+    }
+
+    public double divide() {
+        if (b != 0) {
+            return (double) a / b;
+        } else {
+            throw new ArithmeticException("Division by zero");
+        }
+    }
+
+    public int modulo() {
+        return a % b;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Accepting values from user
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        // Passing values to the constructor
+        ArithmeticOperations ops = new ArithmeticOperations(a, b);
+
+        System.out.println("Addition: " + ops.add());
+        System.out.println("Subtraction: " + ops.subtract());
+        System.out.println("Multiplication: " + ops.multiply());
+        System.out.println("Division: " + ops.divide());
+        System.out.println("Modulo: " + ops.modulo());
+    }
+}
+I hope this helps! Let me know if you'd like to continue with the rest of the questions or have any clarifications.
+
+
+
+
+
+
+You said:
+yes continue
+ChatGPT said:
+ChatGPT
+Let's continue with the remaining questions:
+
+21. Java Program to Print a Diamond Shape Pattern
+java
+Copy code
+public class DiamondPattern {
+    public static void main(String[] args) {
+        int n = 4; // You can change this to any size you want for the pattern
+
+        // Upper half of the diamond
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half of the diamond
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+22. Java Program to Accept 10 Integers and Sort in Ascending and Descending Order
+java
+Copy code
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] arr = new int[10];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter 10 integers:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Sorting in ascending order
+        Arrays.sort(arr);
+        System.out.println("Array in ascending order: " + Arrays.toString(arr));
+
+        // Sorting in descending order
+        int[] descArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            descArr[i] = arr[arr.length - i - 1];
+        }
+        System.out.println("Array in descending order: " + Arrays.toString(descArr));
+    }
+}
+23. Java Program to Print Maximum, Minimum, and Average from Array
+java
+Copy code
+import java.util.Scanner;
+
+public class ArrayStats {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10];
+
+        System.out.println("Enter 10 integers:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = arr[0], min = arr[0];
+        double sum = 0;
+
+        for (int num : arr) {
+            if (num > max) max = num;
+            if (num < min) min = num;
+            sum += num;
+        }
+
+        double average = sum / arr.length;
+
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
+        System.out.println("Average: " + average);
+    }
+}
+24. Java Program to Print Only Odd or Even Numbers from Array
+java
+Copy code
+import java.util.Scanner;
+
+public class PrintOddEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10];
+
+        System.out.println("Enter 10 integers:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Odd numbers in the array:");
+        for (int num : arr) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
+            }
+        }
+
+        System.out.println("\nEven numbers in the array:");
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
+25. Redo Q15 and Q21 with Variable-Length Multidimensional Arrays
+Q15 Redone with Variable-Length Multidimensional Arrays
+java
+Copy code
+public class VariableLengthPattern {
+    public static void main(String[] args) {
+        int[][] pattern = new int[6][];
+
+        // Defining the number of columns for each row
+        for (int i = 0; i < pattern.length; i++) {
+            pattern[i] = new int[i + 1];  // Each row has i+1 columns
+        }
+
+        // Printing the pattern
+        for (int i = 0; i < pattern.length; i++) {
+            for (int j = 0; j < pattern[i].length; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+Q21 Redone with Variable-Length Multidimensional Arrays
+java
+Copy code
+public class DiamondPatternArray {
+    public static void main(String[] args) {
+        int[][] diamond = new int[7][];
+
+        // Upper part of diamond
+        for (int i = 0; i < 4; i++) {
+            diamond[i] = new int[2 * i + 1];
+        }
+
+        // Lower part of diamond
+        for (int i = 4; i < 7; i++) {
+            diamond[i] = new int[13 - 2 * i];
+        }
+
+        // Print pattern
+        for (int i = 0; i < diamond.length; i++) {
+            for (int j = 0; j < diamond[i].length; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+26. Java Program to Create a Reference Type Array of Student Class
+java
+Copy code
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int rollNo;
+
+    public void acceptData() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
+        System.out.print("Enter roll number: ");
+        rollNo = sc.nextInt();
+    }
+
+    public void displayData() {
+        System.out.println("Name: " + name + ", Roll No: " + rollNo);
+    }
+}
+
+public class StudentArray {
+    public static void main(String[] args) {
+        Student[] students = new Student[3];
+
+        for (int i = 0; i < students.length; i++) {
+            students[i] = new Student();
+            students[i].acceptData();
+        }
+
+        System.out.println("\nStudent Details:");
+        for (Student student : students) {
+            student.displayData();
+        }
+    }
+}
+27. MyString Class with Various String Operations
+java
+Copy code
+public class MyString {
+    String str1 = "Welcome to Java tutorial";
+    String str2 = "Todays topic is String Handling in Java";
+
+    public void operations() {
+        // a. Concatenate two strings
+        String concatenated = str1 + " " + str2;
+        System.out.println("Concatenated: " + concatenated);
+
+        // b. Convert str1 to lowercase
+        System.out.println("Lowercase str1: " + str1.toLowerCase());
+
+        // c. Convert str2 to uppercase
+        System.out.println("Uppercase str2: " + str2.toUpperCase());
+
+        // d. Check if both strings are equal
+        System.out.println("Are both strings equal? " + str1.equals(str2));
+
+        // e. Find the location of 'J' in both strings
+        System.out.println("Location of 'J' in str1: " + str1.indexOf('J'));
+        System.out.println("Location of 'J' in str2: " + str2.indexOf('J'));
+
+        // f. Replace 'i' with 'I' in both strings
+        System.out.println("Replace 'i' with 'I' in str1: " + str1.replace('i', 'I'));
+        System.out.println("Replace 'i' with 'I' in str2: " + str2.replace('i', 'I'));
+
+        // g. Display "java" from str1
+        System.out.println("Substring 'Java' from str1: " + str1.substring(11, 15));
+
+        // h. Display the 7th character in str1
+        System.out.println("7th character in str1: " + str1.charAt(6));
+
+        // i. Convert str1 into a string array
+        String[] words = str1.split(" ");
+        System.out.println("str1 as an array: " + String.join(", ", words));
+    }
+
+    public static void main(String[] args) {
+        MyString myStr = new MyString();
+        myStr.operations();
+    }
+}
+Let me know if you'd like to continue with more questions or any clarification!
+
+
+
+
+
+
+You said:
+yes 
+ChatGPT said:
+ChatGPT
+Let's continue with the remaining questions.
+
+28. Operations on a StringBuffer Object
+java
+Copy code
+public class StringBufferOperations {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Hello Jims Students");
+
+        // a. Check its capacity
+        System.out.println("Initial capacity: " + sb.capacity());
+
+        // b. Extend its capacity to 100
+        sb.ensureCapacity(100);
+        System.out.println("Extended capacity: " + sb.capacity());
+
+        // c. Get character at 10th location and set it to uppercase
+        System.out.println("Character at 10th location: " + sb.charAt(10));
+        sb.setCharAt(10, Character.toUpperCase(sb.charAt(10)));
+        System.out.println("Updated StringBuffer: " + sb);
+
+        // d. Get characters from 10th to 20th location
+        String substring = sb.substring(10, 20);
+        System.out.println("Characters from 10 to 20: " + substring);
+
+        // e. Append "how are you" to the string
+        sb.append(" how are you");
+        System.out.println("After append: " + sb);
+
+        // f. Insert "BCA IV" before "Jims"
+        int pos = sb.indexOf("Jims");
+        sb.insert(pos, "BCA IV ");
+        System.out.println("After insertion: " + sb);
+
+        // g. Replace "Jims" with "JIMS"
+        pos = sb.indexOf("Jims");
+        sb.replace(pos, pos + 4, "JIMS");
+        System.out.println("After replacement: " + sb);
+
+        // h. Extract "Students" from the string
+        pos = sb.indexOf("Students");
+        String students = sb.substring(pos);
+        System.out.println("Extracted 'Students': " + students);
+
+        // i. Delete "Hello"
+        sb.delete(0, 6);
+        System.out.println("After deleting 'Hello': " + sb);
+    }
+}
+29. Java Program to Perform Arithmetic Operations Using Classes and Methods
+java
+Copy code
+import java.util.Scanner;
+
+class ArithmeticOperations {
+    int a, b;
+
+    public void acceptValues() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        a = sc.nextInt();
+        System.out.print("Enter second number: ");
+        b = sc.nextInt();
+    }
+
+    public void add() {
+        System.out.println("Sum: " + (a + b));
+    }
+
+    public void subtract() {
+        System.out.println("Difference: " + (a - b));
+    }
+
+    public void multiply() {
+        System.out.println("Product: " + (a * b));
+    }
+
+    public void divide() {
+        if (b != 0) {
+            System.out.println("Quotient: " + (a / b));
+        } else {
+            System.out.println("Division by zero is not allowed.");
+        }
+    }
+
+    public void modulus() {
+        System.out.println("Remainder: " + (a % b));
+    }
+}
+
+public class MainArithmetic {
+    public static void main(String[] args) {
+        ArithmeticOperations ao = new ArithmeticOperations();
+        ao.acceptValues();
+        ao.add();
+        ao.subtract();
+        ao.multiply();
+        ao.divide();
+        ao.modulus();
+    }
+}
+30. Java Program to Create a Person Class with Methods for Accepting and Displaying Details
+java
+Copy code
+import java.util.Scanner;
+
+class Person {
+    String name, gender, address;
+    long contactNo;
+
+    public void accept() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
+        System.out.print("Enter gender: ");
+        gender = sc.nextLine();
+        System.out.print("Enter address: ");
+        address = sc.nextLine();
+        System.out.print("Enter contact number: ");
+        contactNo = sc.nextLong();
+    }
+
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Gender: " + gender);
+        System.out.println("Address: " + address);
+        System.out.println("Contact No: " + contactNo);
+    }
+}
+
+public class MainPerson {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.accept();
+        p.display();
+    }
+}
+31. Java Program to Calculate Average Using Varargs
+java
+Copy code
+public class AverageVarargs {
+    public static void main(String[] args) {
+        System.out.println("Average of 2, 4, 6: " + calculateAverage(2, 4, 6));
+        System.out.println("Average of 1, 5: " + calculateAverage(1, 5));
+        System.out.println("Average of no numbers: " + calculateAverage());
+    }
+
+    public static double calculateAverage(int... numbers) {
+        if (numbers.length == 0) return 0.0;
+
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
+    }
+}
+32. Java Program with Instance and Local Variable Having the Same Name
+java
+Copy code
+class VariableExample {
+    int number = 10; // Instance variable
+
+    public void printValues() {
+        int number = 20; // Local variable
+        System.out.println("Local variable number: " + number);
+        System.out.println("Instance variable number: " + this.number);
+    }
+}
+
+public class MainVariableExample {
+    public static void main(String[] args) {
+        VariableExample ve = new VariableExample();
+        ve.printValues();
+    }
+}
+33. Java Program to Convert Primitive Data Types to Wrapper Classes and Vice Versa
+java
+Copy code
+public class WrapperConversion {
+    public static void main(String[] args) {
+        // Primitive to Wrapper (Boxing)
+        int a = 10;
+        Integer wrapperA = Integer.valueOf(a);
+        System.out.println("Primitive int to Wrapper: " + wrapperA);
+
+        // Wrapper to Primitive (Unboxing)
+        Integer b = new Integer(20);
+        int primitiveB = b.intValue();
+        System.out.println("Wrapper to Primitive int: " + primitiveB);
+    }
+}
+34. Java Program Using Inheritance for MCA and MBA Students (with super)
+java
+Copy code
+import java.util.Scanner;
+
+class Student {
+    String firstName, lastName, qualification;
+    double percentage;
+    int totalMarks;
+
+    public void accept() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first name: ");
+        firstName = sc.nextLine();
+        System.out.print("Enter last name: ");
+        lastName = sc.nextLine();
+        System.out.print("Enter qualification: ");
+        qualification = sc.nextLine();
+        System.out.print("Enter percentage: ");
+        percentage = sc.nextDouble();
+        System.out.print("Enter total marks: ");
+        totalMarks = sc.nextInt();
+    }
+
+    public void display() {
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Qualification: " + qualification);
+        System.out.println("Percentage: " + percentage);
+        System.out.println("Total Marks: " + totalMarks);
+    }
+}
+
+class MCA extends Student {
+    String stream = "MCA";
+    int duration = 3;
+
+    public void display_data() {
+        super.display();
+        System.out.println("Stream: " + stream);
+        System.out.println("Duration: " + duration + " years");
+    }
+}
+
+class MBA extends Student {
+    String stream = "MBA";
+    int duration = 2;
+
+    public void display_data() {
+        super.display();
+        System.out.println("Stream: " + stream);
+        System.out.println("Duration: " + duration + " years");
+    }
+}
+
+public class MainStudent {
+    public static void main(String[] args) {
+        System.out.println("Details of MCA Student:");
+        MCA mcaStudent = new MCA();
+        mcaStudent.accept();
+        mcaStudent.display_data();
+
+        System.out.println("\nDetails of MBA Student:");
+        MBA mbaStudent = new MBA();
+        mbaStudent.accept();
+        mbaStudent.display_data();
+    }
+}
+These programs should give you a comprehensive understanding of how to solve each question related to the topics you're exploring. Let me know if you need further explanations or help with more questions!
+
+
+
+
+
+
+You said:
+yes
+ChatGPT said:
+ChatGPT
+Great! Let's continue from where we left off.
+
+35. Java Program Using Inheritance with super Keyword
+In this program, we’ll use the super keyword to invoke hidden members of the base class Student.
+
+java
+Copy code
+import java.util.Scanner;
+
+class Student {
+    String firstName, lastName, qualification;
+    double percentage;
+    int totalMarks;
+
+    public void accept() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first name: ");
+        firstName = sc.nextLine();
+        System.out.print("Enter last name: ");
+        lastName = sc.nextLine();
+        System.out.print("Enter qualification: ");
+        qualification = sc.nextLine();
+        System.out.print("Enter percentage: ");
+        percentage = sc.nextDouble();
+        System.out.print("Enter total marks: ");
+        totalMarks = sc.nextInt();
+    }
+
+    public void display() {
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Qualification: " + qualification);
+        System.out.println("Percentage: " + percentage);
+        System.out.println("Total Marks: " + totalMarks);
+    }
+}
+
+class MCA extends Student {
+    String stream = "MCA";
+    int duration = 3;
+
+    @Override
+    public void accept() {
+        super.accept(); // Invokes accept() from the Student class
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter MCA duration (in years): ");
+        duration = sc.nextInt();
+    }
+
+    @Override
+    public void display() {
+        super.display(); // Invokes display() from the Student class
+        System.out.println("Stream: " + stream);
+        System.out.println("Duration: " + duration + " years");
+    }
+}
+
+class MBA extends Student {
+    String stream = "MBA";
+    int duration = 2;
+
+    @Override
+    public void accept() {
+        super.accept(); // Invokes accept() from the Student class
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter MBA duration (in years): ");
+        duration = sc.nextInt();
+    }
+
+    @Override
+    public void display() {
+        super.display(); // Invokes display() from the Student class
+        System.out.println("Stream: " + stream);
+        System.out.println("Duration: " + duration + " years");
+    }
+}
+
+public class MainStudentSuper {
+    public static void main(String[] args) {
+        System.out.println("Details of MCA Student:");
+        MCA mcaStudent = new MCA();
+        mcaStudent.accept();
+        mcaStudent.display();
+
+        System.out.println("\nDetails of MBA Student:");
+        MBA mbaStudent = new MBA();
+        mbaStudent.accept();
+        mbaStudent.display();
+    }
+}
+36. Java Program for Calculating Area and Perimeter of Square and Circle
+We'll define a base class Shape with methods to calculate the area and perimeter, and then extend this class to implement these methods for square and circle.
+
+java
+Copy code
+import java.util.Scanner;
+
+abstract class Shape {
+    double dimension1;
+
+    public void accept() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter dimension: ");
+        dimension1 = sc.nextDouble();
+    }
+
+    abstract void cal_area();
+
+    abstract void cal_perimeter();
+}
+
+class Square extends Shape {
+    @Override
+    void cal_area() {
+        double area = dimension1 * dimension1;
+        System.out.println("Area of Square: " + area);
+    }
+
+    @Override
+    void cal_perimeter() {
+        double perimeter = 4 * dimension1;
+        System.out.println("Perimeter of Square: " + perimeter);
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void cal_area() {
+        double area = Math.PI * dimension1 * dimension1;
+        System.out.println("Area of Circle: " + area);
+    }
+
+    @Override
+    void cal_perimeter() {
+        double perimeter = 2 * Math.PI * dimension1;
+        System.out.println("Perimeter of Circle: " + perimeter);
+    }
+}
+
+public class MainShape {
+    public static void main(String[] args) {
+        System.out.println("Square:");
+        Square square = new Square();
+        square.accept();
+        square.cal_area();
+        square.cal_perimeter();
+
+        System.out.println("\nCircle:");
+        Circle circle = new Circle();
+        circle.accept();
+        circle.cal_area();
+        circle.cal_perimeter();
+    }
+}
